@@ -4,45 +4,38 @@
 {% block content %}
 <section>
     <article id="hero">
-      <h1 class="heading_shadow">SPECIAL OFFER</h1>
-      <p>
-        30% Off This Weekend 
-      </p>
-      <a href="#" class="cta"> Book now </a>
+      <img src="/restaurant/static/img/1.png" alt="logo" width="150">
+      <h1 class="heading_shadow">STAY HUNGRY STAY FOOLISH</h1>
+      <a href="#" class="cta"> Reserva ahora: </a>
     </article>
   </section>
   <section>
     <article>
-      <h2>Our New Menu</h2>
-      <img src="{% static 'img/grill.jpg' %}">
+      <h2>Mis servicios</h2>
+      <img src="{% static '/img/menu_items/web3.png' %}">
       <p>
-        Our menu consists of 12-15 seasonal items based on Italian, Greek, and Turkish culture.
+        Fullstack Junior
       </p>
       <p>
-        <a href="{% url 'menu' %}">See our new menu</a>
-      </p>
-    </article>
-    <article>
-      <h2>Book a table</h2>
-      <img src="{% static 'img/salad.jpg' %}">
-      <p>
-        Reserve your table for an Italian, Greek, and Turkish dining experience.
-      </p>
-      <p>
-        <a href="{% url 'book' %}">Book your table now</a>
+        <a href="{% url 'menu' %}">Ve mis servicios</a>
       </p>
     </article>
     <article>
-      <h2>Opening Hours</h2>
-      <img src="{% static 'img/head_chef.jpg' %}">
+      <h2>Reserva un pedido:</h2>
+      <img src="{% static '/img/mktd.png' %}">
       <p>
-        The Little Lemon Restaurant is open 7 days a week, except for public holidays. 
+        Cualquier proyecto que tengas se ve apetitoso.
       </p>
-      <ul>
-        <li>Mon - Fri: 2pm - 10pm</li>
-        <li>Sat: 2pm - 11pm</li>
-        <li>Sun: 2pm - 9pm</li>
-      </ul>
+      <p>
+        <a href="{% url 'book' %}">Reserva tu pedido ahora</a>
+      </p>
+    </article>
+    <article>
+      <h2>Si tu idea es genial entonces todo saldra genial</h2>
+      <img src="{% static '/img/tw.png' %}">
+      <p>
+        El genio es uno por ciento inspiración y noventa y nueve por ciento transpiración.
+      </p>
     </article>
   </section>
 {% endblock %}
