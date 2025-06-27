@@ -24,11 +24,8 @@ django-cors-headers==4.3.1
 django-filter==24.1
 
 # Otras
-#gunicorn>=20.1.0
+gunicorn>=20.1.0
 whitenoise==6.6.0
-littlelemon==1.0.0  # O la versión correcta de littlelemon
-gunicorn==20.0.4
-django==4.1
 
 # Para producción
 uvicorn==0.29.0
