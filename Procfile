@@ -1,1 +1,1 @@
-web: gunicorn littlelemon.wsgi:application
+web: gunicorn nec.wsgi:application
