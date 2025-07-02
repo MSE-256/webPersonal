@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # The settings for app updated for the Graded assessment
     'restaurant',
     'nec',
-    'django.contrib.staticfiles',
     
 ]
 
