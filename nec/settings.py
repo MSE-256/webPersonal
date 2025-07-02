@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # The settings for app updated for the Graded assessment
     'restaurant',
     'nec',
+    'django.contrib.staticfiles',
     
 ]
 
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.staticfiles.StaticFilesMiddleware',
 ]
 
 ROOT_URLCONF = 'nec.urls'
@@ -128,7 +130,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'restaurant/static',
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
