@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # The settings for templates updated for the Graded assessment
-        'DIRS': [os.path.join(BASE_DIR, 'restaurant/templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, '/restaurant/templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
