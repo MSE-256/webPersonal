@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}  <!-- Hereda de un archivo base común -->
+{% load static %}
+
+{% block content %}
+  <section class="container mx-auto my-8 px-4">
+    <h1 class="text-4xl font-bold text-center mb-12">Mi Blog</h1>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for post in posts %}
+        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+          <img class="w-full h-48 object-cover" src="{{ post.image.url }}" alt="{{ post.title }}">
+
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">{{ post.title }}</h2>
+            <p class="text-gray-600 text-sm">{{ post.published_date|date:"F j, Y" }}</p>
+            <p class="text-gray-700 text-base mb-4">{{ post.excerpt }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="text-blue-500 hover:underline">Leer más...</a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center text-gray-500">No hay publicaciones para mostrar.</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

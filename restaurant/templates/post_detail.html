@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="container mx-auto my-8 px-4">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <h1 class="text-4xl font-bold mb-4">{{ post.title }}</h1>
+      <p class="text-gray-500 text-sm mb-4">{{ post.published_date|date:"F j, Y" }}</p>
+      <img class="w-full h-64 object-cover mb-6" src="{{ post.image.url }}" alt="{{ post.title }}">
+      <p class="text-lg">{{ post.content }}</p>
+    </div>
+  </section>
+{% endblock %}

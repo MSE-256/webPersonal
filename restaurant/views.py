@@ -3,7 +3,10 @@ from django.shortcuts import render
 from .forms import BookingForm
 from .models import Menu
 from .forms import ReservationForm
-
+#change
+from django.shortcuts import render
+from .models import Post
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 def home(request):
@@ -33,3 +36,18 @@ def book(request):
 def menu_view(request):
     menu_items = Menu.objects.all()  # Obtener todos los elementos del menú
     return render(request, 'menu.html', {'menu_items': menu_items})
+
+
+
+#aca comienzan los cambios
+
+
+def blog(request):
+    posts = Post.objects.all()  # Obtiene todas las publicaciones del blog
+    return render(request, 'blog.html', {'posts': posts})
+
+
+
+def post_detail(request, id):
+    post = get_object_or_404(Post, id=id)
+    return render(request, 'blog/post_detail.html', {'post': post})

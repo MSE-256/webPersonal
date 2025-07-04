@@ -5,7 +5,7 @@ from django.db import models
 class Booking(models.Model):
    first_name = models.CharField(max_length=200)    
    last_name = models.CharField(max_length=200)
-   guest_number = models.IntegerField()
+   pedido = models.CharField(max_length=250)
    comment = models.CharField(max_length=1000)
 
    def __str__(self):
@@ -18,34 +18,25 @@ class Menu(models.Model):
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=6, decimal_places=2)
 
-from django.db import models
-
-
-# Create your models here.
-class Booking(models.Model):
-   first_name = models.CharField(max_length=200)    
-   last_name = models.CharField(max_length=200)
-   guest_number = models.IntegerField()
-   comment = models.CharField(max_length=1000)
-
-   def __str__(self):
-      return self.first_name + ' ' + self.last_name
-
-
-# Add code to create Menu model
-class Menu(models.Model):
-   name = models.CharField(max_length=100)
-   description = models.TextField()
-   price = models.DecimalField(max_digits=6, decimal_places=2)
-
-   def __str__(self):
-      return self.name
 
 class Reservation(models.Model):
    first_name=models.CharField(max_length=255)
    last_name=models.CharField(max_length=255)
-   guest_count=models.IntegerField()
-   reservation_time=models.DateField(auto_now=True)
+   pedido=models.CharField(max_length=500)
+   correo=models.CharField(max_length=255)
    comment=models.CharField(max_length=1000)
     
-    
+
+#aca comienzan los cambios
+class Post(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    excerpt = models.TextField()  # Extracto que se muestra en la página principal
+    published_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='posts_images/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-published_date']  # Ordena por fecha descendente
