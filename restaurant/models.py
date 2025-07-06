@@ -1,42 +1,27 @@
 from django.db import models
-
-
-# Create your models here.
-class Booking(models.Model):
-   first_name = models.CharField(max_length=200)    
-   last_name = models.CharField(max_length=200)
-   pedido = models.CharField(max_length=250)
-   comment = models.CharField(max_length=1000)
-
-   def __str__(self):
-      return self.first_name + ' ' + self.last_name
-
+from django.contrib.auth.models import User
 
 # Add code to create Menu model
 class Menu(models.Model):
     nombre = models.CharField(max_length=100)
-    descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=6, decimal_places=2)
+    descripcion = models.TextField(max_length=200)
+    contenido = models.TextField(max_length=200)
 
-
-class Reservation(models.Model):
-   first_name=models.CharField(max_length=255)
-   last_name=models.CharField(max_length=255)
-   pedido=models.CharField(max_length=500)
-   correo=models.CharField(max_length=255)
-   comment=models.CharField(max_length=1000)
-    
 
 #aca comienzan los cambios
-class Post(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
-    excerpt = models.TextField()  # Extracto que se muestra en la página principal
-    published_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='posts_images/', null=True, blank=True)
+# blog/models.py
 
-    def __str__(self):
-        return self.title
+
+class Post(models.Model):
+    titulo = models.CharField(max_length=200)
+    contenido = models.TextField()
+    autor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='restaurant_posts')
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
+    publicado = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-published_date']  # Ordena por fecha descendente
+        ordering = ['-creado']
+
+    def __str__(self):
+        return self.titulo

@@ -1,12 +1,10 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import BookingForm
 from .models import Menu
-from .forms import ReservationForm
 #change
 from django.shortcuts import render
 from .models import Post
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 
 # Create your views here.
 def home(request):
@@ -23,14 +21,6 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def book(request):
-    form = BookingForm()
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form':form}
-    return render(request, 'book.html', context)
 
 # Add your code here to create new views
 def menu_view(request):
@@ -40,14 +30,13 @@ def menu_view(request):
 
 
 #aca comienzan los cambios
+# blog/views.py
 
 
-def blog(request):
-    posts = Post.objects.all()  # Obtiene todas las publicaciones del blog
-    return render(request, 'blog.html', {'posts': posts})
+def lista_posts(request):
+    posts = Post.objects.filter(publicado=True)
+    return render(request, 'blog/lista_posts.html', {'posts': posts})
 
-
-
-def post_detail(request, id):
-    post = get_object_or_404(Post, id=id)
-    return render(request, 'blog/post_detail.html', {'post': post})
+def detalle_post(request, pk):
+    post = Post.objects.get(pk=pk, publicado=True)
+    return render(request, 'blog/detalle_post.html', {'post': post})
