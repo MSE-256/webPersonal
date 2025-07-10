@@ -1,0 +1,182 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investigación Científica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #495057;
+            padding: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .research-projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .project {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+        }
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-info p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        .project-info .link {
+            font-size: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .project-info .link:hover {
+            text-decoration: underline;
+        }
+        .publications {
+            background-color: #f1f3f5;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .publications h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .publication {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Investigación Científica</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Proyectos</a>
+    <a href="#">Publicaciones</a>
+    <a href="#">Acerca de</a>
+    <a href="{% url 'home' %}">Home</a>
+</nav>
+
+<div class="container">
+    <h2>Proyectos de Investigación</h2>
+    <div class="research-projects">
+        <div class="project">
+            <img src="{% static 'images/proyecto_1.jpg' %}" alt="Proyecto 1">
+            <div class="project-info">
+                <h3>Estudio sobre Inteligencia Artificial</h3>
+                <p>Análisis de las aplicaciones y los riesgos de la IA en el futuro.</p>
+                <a href="#" class="link">Leer más...</a>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{% static 'images/proyecto_2.jpg' %}" alt="Proyecto 2">
+            <div class="project-info">
+                <h3>Investigación en Cambio Climático</h3>
+                <p>Estudio sobre el impacto del cambio climático en las zonas costeras.</p>
+                <a href="#" class="link">Leer más...</a>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{% static 'images/proyecto_3.jpg' %}" alt="Proyecto 3">
+            <div class="project-info">
+                <h3>Nanotecnología en Medicina</h3>
+                <p>Investigación sobre cómo la nanotecnología puede revolucionar el tratamiento de enfermedades.</p>
+                <a href="#" class="link">Leer más...</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Publicaciones Recientes</h2>
+    <div class="publications">
+        <div class="publication">
+            <p><strong>Impacto de la Inteligencia Artificial en la Sociedad Moderna</strong> - Revista de Tecnología, 2025</p>
+        </div>
+        <div class="publication">
+            <p><strong>Estudio sobre la Conservación de Ecosistemas Marinos</strong> - Journal of Environmental Science, 2025</p>
+        </div>
+        <div class="publication">
+            <p><strong>El Futuro de la Nanotecnología en la Medicina</strong> - Medical Research Journal, 2025</p>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+<!-- Aquí se puede extender con más contenido específico de cada página -->
+{% endblock %}
+
+<footer class="footer">
+    <p>&copy; 2025 Investigación Científica. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

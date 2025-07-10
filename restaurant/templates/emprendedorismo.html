@@ -1,0 +1,184 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyectos de Negocios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #636e72;
+            padding: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .business-projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .project {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+        }
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-info p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        .project-info .link {
+            font-size: 1rem;
+            color: #2d3436;
+            text-decoration: none;
+        }
+        .project-info .link:hover {
+            text-decoration: underline;
+        }
+        .testimonials {
+            background-color: #e9ecef;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        footer {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Proyectos de Negocios</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Proyectos</a>
+    <a href="#">Oportunidades</a>
+    <a href="#">Testimonios</a>
+    <a href="{% url 'home' %}">Home</a>
+</nav>
+
+<div class="container">
+    <h2>Proyectos de Negocios Destacados</h2>
+    <div class="business-projects">
+        <div class="project">
+            <img src="{% static 'images/proyecto_negocio_1.jpg' %}" alt="Proyecto 1">
+            <div class="project-info">
+                <h3>Startup de Tecnología</h3>
+                <p>Innovadora empresa que está revolucionando la industria de la inteligencia artificial.</p>
+                <a href="#" class="link">Ver más detalles...</a>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{% static 'images/proyecto_negocio_2.jpg' %}" alt="Proyecto 2">
+            <div class="project-info">
+                <h3>Negocio de E-commerce</h3>
+                <p>Plataforma en línea con un enfoque en la venta de productos ecológicos y sostenibles.</p>
+                <a href="#" class="link">Ver más detalles...</a>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{% static 'images/proyecto_negocio_3.jpg' %}" alt="Proyecto 3">
+            <div class="project-info">
+                <h3>Consultoría Empresarial</h3>
+                <p>Servicios de asesoría para pequeñas y medianas empresas que buscan crecimiento y expansión.</p>
+                <a href="#" class="link">Ver más detalles...</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Testimonios de Nuestros Clientes</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>"Gracias a la asesoría que recibí, mi empresa ha logrado aumentar sus ventas un 50%." - Juan Pérez, CEO de TechStart</p>
+        </div>
+        <div class="testimonial">
+            <p>"El equipo de consultoría nos ayudó a expandir nuestra presencia en el mercado internacional." - María López, Fundadora de GreenStore</p>
+        </div>
+        <div class="testimonial">
+            <p>"La inversión en este proyecto fue clave para nuestra empresa. El retorno fue increíble." - Luis González, Inversor Principal</p>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+<!-- Aquí puedes extender con contenido específico en páginas de proyectos o detalles de negocio -->
+{% endblock %}
+
+<footer>
+    <p>&copy; 2025 Proyectos de Negocios. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

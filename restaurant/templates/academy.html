@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Educación Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .course {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .course:hover {
+            transform: translateY(-10px);
+        }
+        .course img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .course-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .course-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .course-info p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        .course-info .price {
+            font-size: 1.2rem;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .testimonials {
+            background-color: #f0f0f0;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Educación Online</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Cursos</a>
+    <a href="#">Testimonios</a>
+    <a href="{% url 'home' %}">Home</a>
+</nav>
+
+<div class="container">
+    <h2>Nuestros Cursos</h2>
+    <div class="courses">
+        <div class="course">
+            <img src="{% static 'images/curso_python.jpg' %}" alt="Curso Python">
+            <div class="course-info">
+                <h3>Curso de Python</h3>
+                <p>Aprende a programar con Python desde cero. Ideal para principiantes.</p>
+                <p class="price">$50.00</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="{% static 'images/curso_django.jpg' %}" alt="Curso Django">
+            <div class="course-info">
+                <h3>Curso de Django</h3>
+                <p>Conoce el framework web más popular para crear aplicaciones web.</p>
+                <p class="price">$70.00</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="{% static 'images/curso_uiux.jpg' %}" alt="Curso UI/UX">
+            <div class="course-info">
+                <h3>Curso de UI/UX</h3>
+                <p>Descubre las mejores prácticas de diseño para mejorar la experiencia de usuario.</p>
+                <p class="price">$60.00</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>Testimonios de nuestros estudiantes</h2>
+    <div class="testimonial">
+        <p>"Los cursos son realmente completos y fáciles de entender. Recomiendo mucho la plataforma." - Ana García</p>
+    </div>
+    <div class="testimonial">
+        <p>"Gracias a los cursos de programación, logré conseguir mi primer trabajo como desarrollador." - Luis Pérez</p>
+    </div>
+    <div class="testimonial">
+        <p>"La experiencia de aprendizaje fue increíble, y los instructores son muy profesionales." - Marta López</p>
+    </div>
+</div>
+
+{% block content %}
+<!-- Aquí se podrá extender con contenido adicional en páginas específicas -->
+{% endblock %}
+
+<footer>
+    <p>&copy; 2025 Educación Online. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

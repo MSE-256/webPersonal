@@ -5,10 +5,7 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import Post
 
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'publicado', 'creado', 'autor')
-    list_filter = ('publicado', 'creado')
-    search_fields = ('titulo', 'contenido')
 
-admin.site.register(Post, PostAdmin)
+
+admin.site.register(Post)
 
