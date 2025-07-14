@@ -2,29 +2,147 @@
 {% load static %}
 
 {% block content %}
-<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center;">Freelancer desde 2017</h1>
+<style>
+    .services-section {
+        padding: 50px 20px;
+        background-color: #ecf0f1;
+    }
 
-<section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+    .services-section h2 {
+        text-align: center;
+        font-size: 2.5em;
+        color: #2C3E50;
+        margin-bottom: 40px;
+    }
 
-  <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 10px; max-width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">Fullstack, Diseñadora UX/UI, creadora de contenido y Desarrolladora de juegos</h3>
-    <p style="color: #555;">Del team django con python, html y css ademas de Unity</p>
-  </div>
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
 
-  <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 10px; max-width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">Data Analyst y Product Manager</h3>
-    <p style="color: #555;">Python con pandas, numpy y matplotlib. Planificadora de productos, coordinación de equipos, diseño de MVPs, gestión de productos.</p>
-  </div>
+    .service-card {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+    }
 
-  <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 10px; max-width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">Marketing digital, vendedora y Desarrolladora de Negocio</h3>
-    <p style="color: #555;">Marketing digital, redes sociales y contenido, análisis y métricas, además de gestión de influencers.</p>
-  </div>
+    .service-card:hover {
+        transform: translateY(-8px);
+    }
 
-  <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 10px; max-width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">Escritora, Profesora y traductora</h3>
-    <p style="color: #555;">Nichos de conocimiento con investigaciones.</p>
-  </div>
+    .service-icon {
+        font-size: 2.5em;
+        color: #2C3E50;
+        margin-bottom: 15px;
+    }
 
+    .service-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #2C3E50;
+    }
+
+    .service-desc {
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .cta-button {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background-color: #34495e;
+    }
+</style>
+
+<section class="services-section">
+    <h2>Servicios Profesionales</h2>
+    <div class="services-container">
+        <!-- Servicio 1 -->
+        <article class="service-card">
+            <div class="service-icon">💡</div>
+            <div class="service-title">Product Manager</div>
+            <p class="service-desc">
+                Balanceo las demandas del cliente, los tiempos y los recursos. Lidero productos desde la idea al lanzamiento con foco en valor y mejora continua.
+            </p>
+        </article>
+
+        <!-- Servicio 2 -->
+        <article class="service-card">
+            <div class="service-icon">📣</div>
+            <div class="service-title">Marketing Digital & Desarrollo de Negocio</div>
+            <p class="service-desc">
+                Estrategias digitales, redes sociales, gestión de influencers, análisis y optimización de campañas.
+            </p>
+        </article>
+
+        <!-- Servicio 3 -->
+        <article class="service-card">
+            <div class="service-icon">🧳</div>
+            <div class="service-title">Profesora, Escritora y Travel Manager</div>
+            <a href="https://askfilo.com/online-tutor/marian-6594150">Tutora</a>
+            <p class="service-desc">
+                Enseñanza en línea, traducciones profesionales, redacción creativa y planificación de experiencias de viaje.
+            </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🧳</div>
+          <div class="service-title">Creadora de contenido y divulgacion</div>
+          <a href="https://youtube.com/@marianbenitez256?si=WvhLRgzSMuc-QIOE">Youtuber</a>
+          <p class="service-desc">
+            Contenido referente a investigaciones, emprendimientos, noticias, economia, relacionamiento, salud y ciencia
+          </p>
+      </article>
+
+        <!-- Servicio 4 -->
+        <article class="service-card">
+            <div class="service-icon">🤖</div>
+            <div class="service-title">Data Analyst & AI Engineer</div>
+            <p class="service-desc">
+                Python, pandas, numpy, matplotlib, visualización de datos y diseño de prompts para IA generativa.
+            </p>
+        </article>
+
+        <!-- Servicio 5 -->
+        <article class="service-card">
+            <div class="service-icon">🎮</div>
+            <div class="service-title">Diseño UX/UI & Desarrollo de Juegos</div>
+            <p class="service-desc">
+                Experiencias de usuario impactantes con Figma y Unity, combinando estética y funcionalidad.
+            </p>
+        </article>
+
+        <!-- Servicio 6 -->
+        <article class="service-card">
+            <div class="service-icon">💻</div>
+            <div class="service-title">Desarrollo Web & Apps</div>
+            <p class="service-desc">
+                Desarrollo con Django, HTML, CSS y React Native. Soluciones escalables y personalizadas.
+            </p>
+        </article>
+
+        <!-- Servicio 7 -->
+        <article class="service-card">
+            <div class="service-icon">🌐</div>
+            <div class="service-title">Fullstack + Creativa</div>
+            <p class="service-desc">
+                De backend a frontend con Django, diseño UX/UI, Unity, y contenido digital creativo.
+            </p>
+        </article>
+    </div>
 </section>
 {% endblock %}
