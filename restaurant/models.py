@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Add code to create Menu model
 class Menu(models.Model):
     nombre = models.CharField(max_length=100)
@@ -60,3 +61,7 @@ class Academy(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+

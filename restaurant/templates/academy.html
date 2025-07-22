@@ -128,16 +128,16 @@
     <h2>Nuestros Cursos</h2>
     <div class="courses">
         <div class="course">
-            <img src="/staticfiles/img/fisica.png" alt="Cursoa">
+            <img src="{% static 'img/fisica.png' %}">
             <div class="course-info">
-                <h3>Curso Fisica</h3>
+                <h3>Curso de Fisica</h3>
                 <p>#</p>
                 <a href="#">Curso de Aerodinamica-[yt]</a>
                 <p class="price">$6</p>
             </div>
         </div>
         <div class="course">
-            <img src="/staticfiles/img/elec.png" width="100" alt="Cursob">
+            <img src="{% static 'img/elec.png' %}">
             <div class="course-info">
                 <h3>Curso de Electronica</h3>
                 <p>#</p>
@@ -146,7 +146,8 @@
             </div>
         </div>
         <div class="course">
-            <img src="/staticfiles/img/mktt.png" width="100" alt="Cursoc">
+            <div class="course-info">
+                <img src="{% static 'img/mktt.png' %}">
             <div class="course-info">
                 <h3>Curso de  Marketing </h3>
                 <p>#</p>
@@ -155,8 +156,7 @@
             </div>
         </div>
         <div class="course">
-            <img src="/staticfiles/img/Info.png" width="100" alt="Cursod">
-            <div class="course-info">
+            <img src="{% static 'img/Info.png' %}">            <div class="course-info">
                 <h3>Curso AI</h3>
                 <p>#</p>
                 <a href="#">Promp y Analisis de datos-[yt]</a>

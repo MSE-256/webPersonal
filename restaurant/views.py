@@ -51,3 +51,8 @@ def holmes_view(request):
 def academy_view(request):
     academy_items = Menu.objects.all()  # Obtener todos los elementos del menú
     return render(request, 'academy.html', {'academy_items': academy_items})
+
+
+def post_detail(request):
+    posts = Post.objects.all()
+    return render(request, 'post_detail.html', {'posts': posts})

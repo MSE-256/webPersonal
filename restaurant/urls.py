@@ -13,6 +13,8 @@ urlpatterns = [
     path('academy/', views.academy_view, name='academy'),
     path('marketplace/', views.market, name='marketplace'),
     path('lista_posts', views.lista_posts, name='lista_posts'),
+    path('post/<int:id>/', views.post_detail, name='post_detail'), 
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
